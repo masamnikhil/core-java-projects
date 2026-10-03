@@ -35,6 +35,7 @@ public class Product {
         return stock;
     }
 
+    // add stock logic
     public void addStock(int quantity) {
 
         if (quantity <= 0) {
@@ -44,6 +45,7 @@ public class Product {
         stock += quantity;
     }
 
+    // sell product logic
     public void sellProduct(int quantity) {
 
         if (quantity <= 0) {
@@ -61,6 +63,7 @@ public class Product {
         stock -= quantity;
     }
 
+    // price updation logic
     public void updatePrice(double newPrice) {
 
         if (newPrice <= 0) {
@@ -82,6 +85,7 @@ public class Product {
         );
     }
 
+    // builder pattern for easy object creation
     public static class Builder {
 
         private int productId;

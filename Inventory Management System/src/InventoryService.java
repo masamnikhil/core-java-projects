@@ -2,10 +2,13 @@ import java.util.*;
 
 public class InventoryService {
 
+    // to store products data
     private static Map<Integer, Product> products = new HashMap<>();
 
+    // 1. to add product
     public void addProduct(Scanner sc) {
 
+        // product id is generated randomly
         int id = new Random().nextInt(Integer.MAX_VALUE) + 1;
 
         System.out.print("Enter Product Name: ");
@@ -87,6 +90,7 @@ public class InventoryService {
         System.out.println("Product added successfully.");
     }
 
+    // 2. for searching product
     public Product searchProduct(int productId) {
 
         Product product = products.get(productId);
@@ -98,6 +102,7 @@ public class InventoryService {
         return product;
     }
 
+    // 3. to update price
     public void updatePrice(int productId, double newPrice) {
 
         Product product = searchProduct(productId);
@@ -107,6 +112,7 @@ public class InventoryService {
         System.out.println("Price updated successfully.");
     }
 
+    // 4. adding stock
     public void addStock(int productId, int quantity) {
 
         Product product = searchProduct(productId);
@@ -116,6 +122,7 @@ public class InventoryService {
         System.out.println("Stock added successfully.");
     }
 
+    // 5. product selling
     public  void sellProduct(int productId, int quantity) {
 
         Product product = searchProduct(productId);
@@ -134,6 +141,7 @@ public class InventoryService {
 
     }
 
+    // 6. viewing all products
     public void showAllProducts() {
 
         if (products.isEmpty()) {
@@ -145,6 +153,7 @@ public class InventoryService {
            }
     }
 
+    // 7. to show products with stock less than 5 items
     public void showLowStockProducts() {
 
         boolean found = false;
@@ -162,6 +171,7 @@ public class InventoryService {
         }
     }
 
+    // 8. product deletion
     public void deleteProduct(int productId) {
 
         Product product = products.remove(productId);

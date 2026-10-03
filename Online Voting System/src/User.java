@@ -21,6 +21,7 @@ public class User {
         return password;
     }
 
+    // builder pattern for easy object creation
     public static class Builder {
 
         private String email;

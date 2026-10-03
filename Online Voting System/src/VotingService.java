@@ -2,12 +2,16 @@ import java.util.*;
 
 public class VotingService {
 
+    // users map to store users
     private static Map<String, User> users = new HashMap<>();
 
+    //to track whether user voted or not
     private static Map<String, Boolean> userVoted = new HashMap<>();
 
+    // to store candidates
     private static Map<Integer, Candidate> candidates = new HashMap<>();
 
+    // 1. register user
     public void registerUser(Scanner sc) {
 
         System.out.println("\n---------- REGISTER ----------");
@@ -60,6 +64,7 @@ public class VotingService {
         System.out.println("Registration successful.");
     }
 
+    // 2. login the user
     public User loginUser(Scanner sc) {
 
         System.out.println("\n---------- LOGIN ----------");
@@ -93,6 +98,7 @@ public class VotingService {
         return user;
     }
 
+    // 3. candidates are added automatically when application starts
     public void addCandidates() {
 
         List<String> candidateList = List.of("Bob", "Alice", "Justin", "Garry");
@@ -105,6 +111,7 @@ public class VotingService {
 
     }
 
+    // 4. to view all candidates
     public void viewCandidates (){
 
         System.out.println("\n---------- CANDIDATES ----------");
@@ -123,6 +130,7 @@ public class VotingService {
         }
     }
 
+    // 5. casting user vote
     public void castVote(Scanner sc, User user) {
 
         String email = user.getEmail();
@@ -165,6 +173,7 @@ public class VotingService {
         System.out.println("Vote successfully cast for " + candidate.getName());
     }
 
+    // 6. check user voting status
     public void checkVotingStatus (String email){
 
         boolean voted = userVoted.get(email);
@@ -176,6 +185,7 @@ public class VotingService {
         }
     }
 
+    // 7. to view all cast votes
     public void viewTotalVotes () {
 
         System.out.println("\n---------- TOTAL VOTES ----------");
@@ -200,6 +210,7 @@ public class VotingService {
             System.out.println("Total Votes : " + totalVotes);
     }
 
+    // 8. display result automatically shows winner
     public void displayResult () {
 
         System.out.println("\n---------- ELECTION RESULTS ----------");
@@ -230,6 +241,7 @@ public class VotingService {
         );
     }
 
+    // 9. to display runner-up
     public void displayRunnerUp () {
 
         System.out.println("\n---------- RUNNER-UP ----------");

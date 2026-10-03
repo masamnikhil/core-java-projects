@@ -8,6 +8,7 @@ public class OnlineVotingSystem {
 
     public static void main(String[] args) {
 
+        // candidates are added here
         votingService.addCandidates();
 
         while (true) {
@@ -87,6 +88,7 @@ public class OnlineVotingSystem {
         }
     }
 
+    // shows user menu when user logged in
     public static void userMenu(User user) {
 
         while (true) {

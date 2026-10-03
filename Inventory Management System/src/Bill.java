@@ -34,6 +34,7 @@ public class Bill {
         return totalPrice;
     }
 
+    // generating bill based on product and quantity
     public void displayBill() {
         System.out.println("\n======= Bill Details ========");
         System.out.println("Product Id: " + productId);

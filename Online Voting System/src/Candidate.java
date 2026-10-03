@@ -26,6 +26,7 @@ public class Candidate {
         votes++;
     }
 
+    // builder pattern for easy object creation
     public static class Builder {
 
         private int id;
